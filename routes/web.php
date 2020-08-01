@@ -19,7 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+// POST
+Route::get('/post', 'PostController@index')->name('post');
+
+Route::post('/post/store', 'PostController@store')->name('post.store');
+
 Route::get('/logout', function () {
     Auth::logout();
     return redirect()->to('/');
