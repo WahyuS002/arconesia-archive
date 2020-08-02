@@ -10,7 +10,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('post.index');
+        $posts = Post::all();
+
+        return view('post.index', compact('posts'));
+    }
+
+    public function create()
+    {
+        return view('post.create');
     }
 
     public function store(Request $request)
@@ -20,5 +27,26 @@ class PostController extends Controller
         Post::create($request->all());
 
         return redirect()->back()->with('status', 'Berhasil Menambahkan Postingan');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('post.edit', compact('post'));
+    }
+
+    public function update(Post $post, Request $request)
+    {
+        $post->update($request->all());
+
+        return redirect()->back();
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        session()->flash('success', 'The post has been deleted');
+
+        return redirect()->back();
     }
 }

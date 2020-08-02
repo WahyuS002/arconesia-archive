@@ -1,15 +1,24 @@
 @extends('layouts.board')
 
+@section('css')
+    <!-- Table css -->
+    <link href="{{ asset('plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css') }}" rel="stylesheet" type="text/css" media="screen">
+@endsection
+
 @section('content')
+
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h4 class="page-title m-0">Summernote</h4>
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                    <h4 class="page-title m-0">Responsive Table</h4>
+                    @if(session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>{{ session()->get('success') }}</p>
                         </div>
                     @endif
                 </div>
@@ -43,53 +52,62 @@
         <div class="card m-b-30">
             <div class="card-body">
 
-                <h4 class="mt-0 header-title">Examples</h4>
-                <p class="text-muted m-b-30">Super simple wysiwyg editor on bootstrap</p>
+                <h4 class="mt-0 header-title">Example</h4>
+                <p class="text-muted m-b-30 font-14">This is an experimental awesome solution for responsive tables with complex data.</p>
 
-                <form action="{{ route('post.store') }}" method="POST">
-                    @csrf
-                    <div class="form-group row">
-                        <label for="title" class="col-sm-2 col-form-label">Text</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text" id="title" name="title">
-                        </div>
+                <div class="table-rep-plugin">
+                    <div class="table-responsive b-0" data-pattern="priority-columns">
+                        <table id="tech-companies-1" class="table  table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th data-priority="1">Comment</th>
+                                <th data-priority="3">Date</th>
+                                <th data-priority="1">Action</th>                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($posts as $post)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <th>{{ $post->title }}</th>
+                                    <td>597.74</td>
+                                    <td>{{ $post->tanggal }}</td>                            
+                                    <td>
+                                        {{-- <button class="btn btn-danger"></button> --}}
+                                        <a href="{{ route('post.edit', $post->id ) }}" class="btn btn-sm btn-success">Edit</a>
+                                        <form action="{{ route('post.delete', $post->id) }}" method="POST"> 
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                        </form>     
+                                    </td> 
+                                </tr>                            
+                                @endforeach                                                           
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-group row">
-                        <label for="foto" class="col-sm-2 col-form-label">Foto</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text" id="foto" name="foto">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="date" id="tanggal" name="tanggal">
-                        </div>
-                    </div>
-                    <textarea name="body" class="summernote"></textarea>
-                    <button class="btn btn-primary" type="submit">Create Post</button>
-                </form>
+
+                </div>
 
             </div>
         </div>
     </div> <!-- end col -->
-</div> <!-- end row -->
+</div> <!-- end row -->           
 @endsection
 
 @section('js')
-    <!--Summernote js-->
-    <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <!-- Responsive-table-->
+    <script src="{{ asset('plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js') }}"></script>
 
     <!-- App js -->
     <script src="{{ asset('zinzer/assets/js/app.js') }}"></script>
-
+    
     <script>
-        jQuery(document).ready(function(){
-            $('.summernote').summernote({
-                height: 300,                 // set editor height
-                minHeight: null,             // set minimum height of editor
-                maxHeight: null,             // set maximum height of editor
-                focus: true                 // set focus to editable area after initializing summernote
+        $(function() {
+            $('.table-responsive').responsiveTable({
+                addDisplayAllBtn: 'btn btn-secondary'
             });
         });
     </script>

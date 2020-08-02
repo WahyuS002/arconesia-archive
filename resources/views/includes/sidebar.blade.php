@@ -24,16 +24,32 @@
                     </a>
                 </li>               
 
+                <li class="menu-title">Post</li>
+
                 <li class="{{ request()->is('post') ? ' nav-active' : '' }}">
-                    <a href="{{ route('post') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Post </span></a>
+                    <a href="{{ route('post') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
                 </li>                
+
+                <li class="{{ request()->is('post/create') ? ' nav-active' : '' }}">
+                    <a href="{{ route('post.create') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Posting </span></a>
+                </li>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-view-thumb"></i><span> Tables </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="tables-basic.html">Basic Tables</a></li>                        
                     </ul>
-                </li>                                
+                </li>        
+                
+                <li class="menu-title">Invest</li>
+
+                <li class="{{ request()->is('') ? ' nav-active' : '' }}">
+                    <a href="{{ route('post') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
+                </li>                
+
+                <li class="{{ request()->is('post/create') ? ' nav-active' : '' }}">
+                    <a href="{{ route('post.create') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Projek </span></a>
+                </li>
 
             </ul>
         </div>

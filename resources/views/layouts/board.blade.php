@@ -11,6 +11,8 @@
 
         @include('includes.style')
 
+        @yield('css')
+
     </head>
 
 
