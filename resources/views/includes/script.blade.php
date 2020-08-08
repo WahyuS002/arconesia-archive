@@ -9,3 +9,6 @@
 <script src="{{ asset('zinzer/assets/js/waves.js') }}"></script>
 <script src="{{ asset('zinzer/assets/js/jquery.nicescroll.js') }}"></script>
 <script src="{{ asset('zinzer/assets/js/jquery.scrollTo.min.js') }}"></script>
+
+<!-- App js -->
+<script src="{{ asset('zinzer/assets/js/app.js') }}"></script>

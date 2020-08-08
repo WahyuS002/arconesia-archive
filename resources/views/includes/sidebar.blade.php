@@ -47,8 +47,18 @@
                     <a href="{{ route('post') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
                 </li>                
 
-                <li class="{{ request()->is('post/create') ? ' nav-active' : '' }}">
-                    <a href="{{ route('post.create') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Projek </span></a>
+                <li class="{{ request()->is('') ? ' nav-active' : '' }}">
+                    <a href="{{ route('invest.project') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Projek </span></a>
+                </li>
+
+                <li class="menu-title">Lahan</li>
+
+                <li class="{{ request()->is('lahan') ? ' nav-active' : '' }}">
+                    <a href="{{ route('lahan') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
+                </li>                
+
+                <li class="{{ request()->is('lahan/create') ? ' nav-active' : '' }}">
+                    <a href="{{ route('lahan.create') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Tambah Lahan </span></a>
                 </li>
 
             </ul>

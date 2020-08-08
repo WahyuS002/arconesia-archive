@@ -12,13 +12,13 @@
                 <div class="col-md-8">
                     <h4 class="page-title m-0">Summernote</h4>
                     @if (session('status'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <strong>Well done!</strong> You successfully {{ session('status') }}.
-                    </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Well done!</strong> You successfully {{ session('status') }}.
+                        </div>
                     @endif
                 </div>
                 <div class="col-md-4">
@@ -54,32 +54,26 @@
                 <h4 class="mt-0 header-title">Examples</h4>
                 <p class="text-muted m-b-30">Super simple wysiwyg editor on bootstrap</p>
 
-                <form action="{{ route('post.store') }}" method="POST">
+                <form action="{{ route('lahan.store') }}" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="title" class="col-sm-2 col-form-label">Title</label>
+                        <label for="nama_lahan" class="col-sm-2 col-form-label">Nama Lahan</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="title" name="title">
+                            <input class="form-control" type="text" id="nama_lahan" name="nama_lahan">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="foto" class="col-sm-2 col-form-label">Foto</label>
+                        <label for="luas" class="col-sm-2 col-form-label">Luas</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="foto" name="foto">
+                            <input class="form-control" type="text" id="luas" name="luas">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="date" id="tanggal" name="tanggal">
-                        </div>
-                    </div>
-                    <textarea name="body" class="summernote"></textarea>
+                    </div>                    
+                    <textarea name="deskripsi" class="summernote"></textarea>
 
                     <div class="form-group row mt-3">
-                        <label for="tag" class="col-sm-2 col-form-label">Tag</label>
+                        <label for="komoditas" class="col-sm-2 col-form-label">Komoditas</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" id="tag" name="tag">
+                            <input class="form-control" type="text" id="komoditas" name="komoditas">
                         </div>
                     </div>
 

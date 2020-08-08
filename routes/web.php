@@ -31,6 +31,17 @@ Route::get('/post/{post:id}/edit', 'PostController@edit')->name('post.edit');
 Route::post('/post/{post:id}/update', 'PostController@update')->name('post.update');
 Route::delete('/post/{post:id}/delete', 'PostController@destroy')->name('post.delete');
 
+// INVEST
+// Route::get('/invest', 'InvestController@index')->name('invest');
+
+Route::get('/invest/project', 'InvestController@project')->name('invest.project');
+
+// LAHAN
+Route::get('/lahan', 'FarmController@index')->name('lahan');
+
+Route::get('/lahan/create', 'FarmController@create')->name('lahan.create');
+Route::post('/lahan/store', 'FarmController@store')->name('lahan.store');
+
 Route::get('/logout', function () {
     Auth::logout();
     return redirect()->to('/');
