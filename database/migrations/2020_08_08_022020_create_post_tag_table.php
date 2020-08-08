@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFarmsTable extends Migration
+class CreatePostTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateFarmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('farms', function (Blueprint $table) {
-            $table->id();
+        Schema::create('post_tag', function (Blueprint $table) {
+            // $table->id();
 
-            $table->string('nama_lahan', 25);
-            $table->integer('luas');
-            // $table->string('komoditas', 25);
-            $table->mediumText('deskripsi');
+            $table->foreignId('post_id')->constrained('posts');
+            $table->foreignId('tag_id')->constrained('tags');
+
+            $table->primary(['post_id', 'tag_id']);
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateFarmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farms');
+        Schema::dropIfExists('post_tag');
     }
 }

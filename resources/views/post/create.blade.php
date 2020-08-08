@@ -2,6 +2,8 @@
 
 @section('css')
     <link href="{{ asset('plugins/summernote/summernote-bs4.css') }}" rel="stylesheet" />
+    <link href="{{ asset('zinzer/assets/css/select2.min.css') }}" rel="stylesheet" />
+
 @endsection
 
 @section('content')
@@ -74,12 +76,17 @@
                             <input class="form-control" type="date" id="tanggal" name="tanggal">
                         </div>
                     </div>
+                    
                     <textarea name="body" class="summernote"></textarea>
 
                     <div class="form-group row mt-3">
-                        <label for="tag" class="col-sm-2 col-form-label">Tag</label>
+                        <label class="col-sm-2 col-form-label">Tag</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" id="tag" name="tag">
+                            <select class="form-control js-example-basic-multiple" name="tags[]" multiple="multiple">
+                                @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->nama_tag }}</option>                                    
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 
@@ -93,6 +100,14 @@
 @endsection
 
 @section('js')
+    <script src="{{ asset('zinzer/assets/js/select2.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+    </script>
+
     <!--Summernote js-->
     <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 

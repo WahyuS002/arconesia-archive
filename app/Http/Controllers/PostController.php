@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -17,14 +18,16 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('post.create');
+        $tags = Tag::all();
+
+        return view('post.create', compact('tags'));
     }
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        $post = Post::create($request->all());
 
-        Post::create($request->all());
+        $post->tags()->attach($request->tags);
 
         return redirect()->back()->with('status', 'Berhasil Menambahkan Postingan');
     }

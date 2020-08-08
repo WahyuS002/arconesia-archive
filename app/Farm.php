@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Farm extends Model
 {
-    protected $fillable = ['nama_lahan', 'luas', 'komoditas', 'deskripsi'];
+    protected $fillable = ['nama_lahan', 'luas', 'deskripsi'];
 
     public function farm_galleries()
     {
