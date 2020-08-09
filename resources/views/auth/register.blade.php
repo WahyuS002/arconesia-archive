@@ -66,8 +66,8 @@
 
                             <div class="col-md-6">
                                 {{-- <input id="role" type="password" class="form-control" name="role" required> --}}
-                                <input type="radio" value="petani" name="role"> Petani
-                                <input type="radio" value="investor" name="role"> Investor
+                                <input id="role" type="radio" value="petani" name="role" required> Petani
+                                <input id="role" type="radio" value="investor" name="role" required> Investor
                             </div>
                         </div>
 
