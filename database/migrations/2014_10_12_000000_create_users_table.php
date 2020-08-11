@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['admin', 'petani', 'investor']);
+            $table->enum('is_kyc', ['waiting', 'success', 'failed']);
             $table->rememberToken();
             $table->timestamps();
         });

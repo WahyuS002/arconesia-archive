@@ -54,7 +54,7 @@
                 <h4 class="mt-0 header-title">Examples</h4>
                 <p class="text-muted m-b-30">Super simple wysiwyg editor on bootstrap</p>
 
-                <form action="{{ route('lahan.store') }}" method="POST">
+                <form action="{{ route('farm.store') }}" method="POST">
                     @csrf
                     <div class="form-group row">
                         <label for="nama_lahan" class="col-sm-2 col-form-label">Nama Lahan</label>

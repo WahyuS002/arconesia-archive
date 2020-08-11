@@ -34,6 +34,20 @@ Route::middleware('admin')->group(function () {
     Route::delete('/post/{post:id}/delete', 'PostController@destroy')->name('post.delete');
 });
 
+Route::middleware('petani')->group(function () {
+    // LAHAN
+    Route::get('/lahan', 'FarmController@index')->name('farm');
+
+    Route::get('/lahan/create', 'FarmController@create')->name('farm.create');
+    Route::post('/lahan/store', 'FarmController@store')->name('farm.store');
+});
+
+
+Route::get('/verifikasi', 'FarmController@kyc')->name('kyc');
+
+Route::get('/verifikasi/info-pribadi', 'FarmController@kycAbout')->name('kyc.about');
+Route::get('/verifikasi/info-bank', 'FarmController@kycBank')->name('kyc.bank');
+Route::get('/verifikasi/info-identitas', 'FarmController@kycIdentity')->name('kyc.identity');
 
 // INVEST
 // Route::get('/invest', 'InvestController@index')->name('invest');
