@@ -25,7 +25,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $post = Post::create($request->all());
+        $post = auth()->user()->posts()->create($request->all());
 
         $post->tags()->attach($request->tags);
 

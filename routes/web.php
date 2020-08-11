@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,28 +18,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+});
 
 // POST
-Route::get('/post', 'PostController@index')->name('post');
+Route::middleware('admin')->group(function () {
+    Route::get('/post', 'PostController@index')->name('post');
 
-Route::get('/post/create', 'PostController@create')->name('post.create');
-Route::post('/post/store', 'PostController@store')->name('post.store');
+    Route::get('/post/create', 'PostController@create')->name('post.create');
+    Route::post('/post/store', 'PostController@store')->name('post.store');
 
-Route::get('/post/{post:id}/edit', 'PostController@edit')->name('post.edit');
-Route::post('/post/{post:id}/update', 'PostController@update')->name('post.update');
-Route::delete('/post/{post:id}/delete', 'PostController@destroy')->name('post.delete');
+    Route::get('/post/{post:id}/edit', 'PostController@edit')->name('post.edit');
+    Route::post('/post/{post:id}/update', 'PostController@update')->name('post.update');
+    Route::delete('/post/{post:id}/delete', 'PostController@destroy')->name('post.delete');
+});
+
 
 // INVEST
 // Route::get('/invest', 'InvestController@index')->name('invest');
 
-Route::get('/invest/project', 'InvestController@project')->name('invest.project');
-
-// LAHAN
-Route::get('/lahan', 'FarmController@index')->name('lahan');
-
-Route::get('/lahan/create', 'FarmController@create')->name('lahan.create');
-Route::post('/lahan/store', 'FarmController@store')->name('lahan.store');
+// Route::get('/invest/project', 'InvestController@project')->name('invest.project');
 
 Route::get('/logout', function () {
     Auth::logout();
