@@ -23,15 +23,18 @@
             <div class="card-body">
                 <div class="tab-pane active p-3" id="home" role="tabpanel">
                     <p class="mb-0">
-                        <div class="form-group">
-                            <label>Foto KTP</label>
-                            <input type="file" class="form-control" name="foto_ktp" required placeholder="Mandiri"/>
-                        </div>                        
-                        <div class="form-group">
-                            <label>Foto KYC</label>
-                            <input type="file" class="form-control" name="foto_kyc" required placeholder="John Doe"/>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>                       
+                        <form action="{{ route('kyc.identity.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf                        
+                            <div class="form-group">
+                                <label>Foto KTP</label>
+                                <input type="file" class="form-control" name="foto_ktp" required placeholder="Mandiri"/>
+                            </div>                        
+                            <div class="form-group">
+                                <label>Foto KYC</label>
+                                <input type="file" class="form-control" name="foto_kyc" required placeholder="John Doe"/>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>                       
                     </p>
                 </div>
             </div>

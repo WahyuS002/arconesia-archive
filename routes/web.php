@@ -43,11 +43,16 @@ Route::middleware('petani')->group(function () {
 });
 
 
-Route::get('/verifikasi', 'FarmController@kyc')->name('kyc');
+Route::get('/verifikasi', 'FarmerController@kyc')->name('kyc');
 
-Route::get('/verifikasi/info-pribadi', 'FarmController@kycAbout')->name('kyc.about');
-Route::get('/verifikasi/info-bank', 'FarmController@kycBank')->name('kyc.bank');
-Route::get('/verifikasi/info-identitas', 'FarmController@kycIdentity')->name('kyc.identity');
+Route::get('/verifikasi/info-pribadi', 'FarmerController@kycAbout')->name('kyc.about');
+Route::post('/verifikasi/info-pribadi/store', 'FarmerController@kycAboutStore')->name('kyc.about.store');
+
+Route::get('/verifikasi/info-bank', 'FarmerController@kycBank')->name('kyc.bank');
+Route::post('/verifikasi/info-bank/store', 'FarmerController@kycBankStore')->name('kyc.bank.store');
+
+Route::get('/verifikasi/info-identitas', 'FarmerController@kycIdentity')->name('kyc.identity');
+Route::post('/verifikasi/info-identitas/store', 'FarmerController@kycIdentityStore')->name('kyc.identity.store');
 
 // INVEST
 // Route::get('/invest', 'InvestController@index')->name('invest');

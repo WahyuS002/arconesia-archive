@@ -23,19 +23,22 @@
             <div class="card-body">
                 <div class="tab-pane active p-3" id="home" role="tabpanel">
                     <p class="mb-0">
-                        <div class="form-group">
-                            <label>Bank</label>
-                            <input type="text" class="form-control" name="nama_rek" required placeholder="Mandiri"/>
-                        </div>                        
-                        <div class="form-group">
-                            <label>Nama Pemilik Rekening</label>
-                            <input type="text" class="form-control" name="nama_rek" required placeholder="John Doe"/>
-                        </div>                        
-                        <div class="form-group">
-                            <label>Nomor Rekening</label>
-                            <input type="number" class="form-control" name="no_rek" required placeholder="1771 2323 1233"/>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>      
+                        <form action="{{ route('kyc.bank.store') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label>Bank</label>
+                                <input type="text" class="form-control" name="bank" required placeholder="Mandiri"/>
+                            </div>                        
+                            <div class="form-group">
+                                <label>Nama Pemilik Rekening</label>
+                                <input type="text" class="form-control" name="nama_rek" required placeholder="John Doe"/>
+                            </div>                        
+                            <div class="form-group">
+                                <label>Nomor Rekening</label>
+                                <input type="number" class="form-control" name="no_rek" required placeholder="1771 2323 1233"/>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </p>
                 </div>
             </div>

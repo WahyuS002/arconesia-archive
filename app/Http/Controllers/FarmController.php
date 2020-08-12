@@ -29,24 +29,4 @@ class FarmController extends Controller
 
         return redirect()->back();
     }
-
-    public function kyc()
-    {
-        return view('farm.kyc');
-    }
-
-    public function kycAbout()
-    {
-        return view('farm.kyc-about');
-    }
-
-    public function kycBank()
-    {
-        return view('farm.kyc-bank');
-    }
-
-    public function kycIdentity()
-    {
-        return view('farm.kyc-identity');
-    }
 }
