@@ -32,6 +32,11 @@ Route::middleware('admin')->group(function () {
     Route::get('/post/{post:id}/edit', 'PostController@edit')->name('post.edit');
     Route::post('/post/{post:id}/update', 'PostController@update')->name('post.update');
     Route::delete('/post/{post:id}/delete', 'PostController@destroy')->name('post.delete');
+
+    Route::get('/user', 'UserController@index')->name('user');
+    Route::get('/user/{user:id}/check', 'UserController@check')->name('user.check');
+
+    Route::get('/user/{user:id}/verify', 'UserController@verify')->name('user.verify');
 });
 
 Route::middleware('petani')->group(function () {

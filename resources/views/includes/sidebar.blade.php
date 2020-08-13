@@ -41,6 +41,12 @@
                             <li><a href="tables-basic.html">Basic Tables</a></li>                        
                         </ul>
                     </li>
+
+                    <li class="menu-title">User</li>
+
+                    <li class="{{ request()->is('user') ? ' nav-active' : '' }}">
+                        <a href="{{ route('user') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
+                    </li>
                 @elseif(Auth::user()->role == 'petani')
                     <li class="menu-title">Lahan</li>
 
