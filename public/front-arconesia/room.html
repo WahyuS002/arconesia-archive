@@ -1,0 +1,643 @@
+<!-- 
+    NOTE SETIAP IDENTASI BERARTI ELEMENT BERADA DI DALAM TAGS INDUK NYA
+
+    POSTING SECTION PUNYA 2 BAGIAN
+    1. ROOM NAV
+        - SORT TOPICS/ TAGS : EDIT(a TAG) UNTUK SORT ARTICLE BERDASARKAN TAGS
+        - SOCIAL MEDIA LINKS : EDIT(a TAG) MENUJU LINK SOCIAL MEDIA
+    2. CARD POSTING CONTAINER
+        - POSTING CARD
+            - TAGS POSTING CARD : EDIT(h5 TAG) TAG YANG DI MILIKI ARTICLE
+            - LINK TO ARTICLE 1 POSTING : EDIT( a TAG ) MENUJU PAGE ARTICLE 
+                - ARTICLE IMAGE : EDIT(img TAG) FOTO ARTICLE 
+                - ARTICLE DATE : EDIT (p TAG) TANGGAL ARTICLE 
+                - ARTICLE TITLE : EDIT( h5 TAG ) JUDUL ARTICLE
+                - ARTICLE CONTENT : EDIT(p TAG) CONTENT ARTIICLE 
+                - LINK TO ARTICLE 2 POSTING : SAMA SEPERTI LINK TO ARTICLE 1 POSTING
+                // ARTICLE AUTHORS (POSTED_BY ) ADA DI PAGE ARTICLE 
+
+        - LOAD POST : EDIT (button TAG) : UNTUK LOAD CARDS // EDIT BAGIAN YANG PERLU DI EDIT 
+            
+ -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hoverbuttons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Libre+Baskerville%3A400%2C400italic%7CAbril+Fatface%7CKarla%3A400%2C700%7CRoboto%3A400%2C300&ver=4.7.5"
+        rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./node_modules/sal.js/dist/sal.css">
+    <title>Arconesia</title>
+</head>
+
+<body>
+
+    <div class="preload">
+        <div class="spinner-grow text-light" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light pb-3">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-1  col-lg-12 text-center">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand font1" href="#"> <img src="images/logo.png" alt=""></a>
+                        <hr>
+                    </div>
+                    <div class="col-xl-11 col-lg-12">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ml-auto">
+                                <a class="nav-item mr-4 ml-4 font1 nav-link"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="index.html">Home</a>
+                                <a class="nav-item mr-4 ml-4 font1 nav-link"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="#">About</a>
+                                <a class="nav-item mr-4 ml-4 font1 nav-link"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="#">Mart</a>
+                                <a class="nav-item mr-4 ml-4 font1 nav-link"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="invest.html">Invest</a>
+                                <a class="nav-item mr-4 ml-4 font1 nav-link active"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="room.html"> <span
+                                        class="sr-only">(current)</span> Room</a>
+                                <a class="nav-item mr-4 ml-4 font1 nav-link"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="#">Contact</a>
+
+                                <button type="button"
+                                    class=" nav-item mr-4 ml-4 hbtn hb-fill-on pl-5 pr-5 bg-color1">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Jumbotron -->
+    <div class="container-fluid smaller pb-5">
+        <div class="container">
+            <div class="row h100">
+                <div class="col-lg-12 col-xl-6 p-5" data-sal-duration="2000" data-sal-dalay="100"
+                    data-sal-easing="ease-out-bounce" data-sal="slide-right">
+                    <!-- Vetical Space -->
+                    <div class="container h10"></div>
+                    <h1 data-sal-duration="2000" data-sal-dalay="100" data-sal-easing="ease-out-bounce"
+                        class=" text-uppercase">ROOM</h1>
+                    <br>
+                    <h3>Find Arconesia lastest information, Ideas, and Activity</h3>
+                    <hr>
+                    <br>
+                </div>
+                <div class="col-lg-12 col-xl-6 h50 p-5">
+                    <img class="card-img-top" style="height: 80vh;" src="images/room_1.svg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POSTING -->
+    <div class="container">
+        <div class="row">
+            <!-- ROOM NAV -->
+            <div class="col-lg-3 roomnav text-left mb-5 p-5">
+                <div class="container-fluid">
+                    <!-- SORT TOPICS/TAGS -->
+                    <h5>TOPICS</h5>
+                    <hr>
+                    <br><br>
+                    <a href="">
+                        <p>Technology</p>
+                        <br>
+                    </a>
+
+                    <a href="">
+                        <p>Nature</p>
+                        <br>
+                    </a>
+                    <a href="">
+                        <p>Education</p>
+                        <br>
+                    </a>
+                    <a href="">
+                        <p>Travel</p>
+                        <br>
+                    </a>
+                    <a href="">
+                        <p>Lifestyle</p>
+                        <br>
+                    </a>
+                    <br><br>
+                    <!-- SORT TOPICS/TAGS END -->
+                </div>
+
+                <!-- SOCIAL MEDIA LINKS -->
+                <div class="container-fluid">
+                    <h5>GIVE US A FOLLOW</h5>
+                    <hr>
+                    <br><br>
+                    <a href="">
+                        <p><i style="font-size: 1em;" class="pr-2 fa fa-facebook"></i> Facebook</p>
+                        <br>
+                    </a>
+                    <a href="">
+                        <p><i style="font-size: 1em;" class="pr-2 fa fa-instagram"></i> Instagram</p>
+                        <br>
+                    </a>
+                    <a href="">
+                        <p><i style="font-size: 1em;" class="pr-2 fa fa-twitter"></i> Twitter</p>
+                        <br>
+                    </a>
+                    <br><br>
+                </div>
+                <!-- SOCIAL MEDIA LINKS END-->
+            </div>
+            <!-- ROOM NAV END -->
+
+            <div class="col-lg-9">
+                <!-- CARDS POSTING CONTAINER -->
+                <div class="container">
+                    <div class="row">
+
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+                        <!--POSTING CARD START -->
+                        <div class="col-lg-4">
+                            <!-- TAGS POSTING CARD -->
+                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
+                            <!-- TAGS POSTING CARD END -->
+
+                            <!-- LINK TO ARTICLE 1 POSTING -->
+                            <a href="article.html">
+                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
+                                    <!-- ARTICLE IMAGE -->
+                                    <img class="card-img-top bg-cover" src="images/mart7.jpeg" alt="Card image cap">
+                                    <!-- ARTICLE IMAGE END -->
+                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
+                                        READ MORE
+                                    </h5>
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <!-- ARTCILE TITLE -->
+                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
+                                                of
+                                                Space
+                                                Food</h5>
+                                            <!-- ARTCILE TITLE END -->
+                                            <hr>
+
+                                            <!-- ARTICLE DATE -->
+                                            <p class=" text-muted pr-1 text-right"
+                                                style="font-size: smaller; text-transform: uppercase;">
+                                                APRIL 15, 2019
+                                            </p>
+                                            <!-- ARTICLE DATE END -->
+
+                                            <br>
+                                            <!-- ARTICLE CONTENT -->
+                                            <p class="card-text">This article is based on research currently being
+                                                conducted
+                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <br>
+                                            <!-- ARTICLE CONTENT END -->
+
+                                            <!-- LINK TO ARTICLE 2 POSTING -->
+                                            <a href="article.html">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <p class=" text-muted col-md-9 pr-1"
+                                                            style="font-size: smaller;">
+                                                            CONTINUE READING
+                                                        </p>
+                                                        <div class="col-md-3 p-0">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- LINK TO ARTICLE 2 POSTING END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--POSTING CARD END-->
+
+                    </div>
+                </div>
+                <!-- CARDS POSTING CONTAINER END -->
+
+                <!-- LOAD POST -->
+                <div class="container text-center">
+                    <button type="button" class=" text-center d-inline hbtn hb-fill-right bg-color1 pl-4 pr-4">LOAD
+                        MORE POST</button>
+                </div>
+                <!-- LOAD POST END -->
+            </div>
+        </div>
+    </div>
+    <!-- POSTING END -->
+
+    <!-- Vetical Space -->
+    <div class="container h20"></div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-color1 color4 mt-5 p-5">
+        <div class="container smaller">
+            <div class="row mb-5 mt-5">
+                <div class="col-lg-4 p-5">
+                    <h5>About</h5>
+                    <hr>
+                    <p>Copyright</p>
+                    <p>Privacy Policy</p>
+                    <p>Terms of Use</p>
+                </div>
+                <div class="col-lg-4 p-5">
+                    <h5>Contact</h5>
+                    <hr>
+                    <p>Phone : 0000-0000-0000</p>
+                    <br>
+                    <p>Location : Lorem ipsum dolor.</p>
+                    <br>
+                    <p>Email : Lorem, ipsum dolor@email.com</p>
+                    <hr>
+                    <a href="room.html"><button type="button" class="hbtn hb-fill-right-br pl-4 pr-4">
+                            Get In Touch
+                        </button></a>
+                </div>
+                <div class="col-lg-4 p-5">
+                    <h5>Nav</h5>
+                    <hr>
+                    <p>About Us</p>
+                    <p>Mart</p>
+                    <p>Invest</p>
+                    <p>Room</p>
+                    <p>Contact</p>
+                </div>
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <p class="m-4">&copy; Copyright 2020 Arconesia</p>
+                        <div class="ml-auto">
+                            <i style="font-size: 1em;" class=" m-4 fa fa-facebook"></i>
+                            <i style="font-size: 1em;" class=" m-4 fa fa-instagram"></i>
+                            <i style="font-size: 1em;" class=" m-4 fa fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./node_modules/sal.js/dist/sal.js"></script>
+    <script>
+        sal({
+            // threshold: 0.5,
+            // once: false,
+        });
+
+        window.addEventListener('load', () => {
+            const preload = document.querySelector('.preload');
+            preload.classList.add('preload-finish');
+        })
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/ulg/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

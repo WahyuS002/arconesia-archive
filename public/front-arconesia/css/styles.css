@@ -1,0 +1,358 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: border-box;
+
+}
+
+
+
+.smaller {
+    transform: scale(0.85, 0.85);
+    -ms-transform: scale(0.85, 0.85);
+    /* IE 9 */
+    -webkit-transform: scale(0.85, 0.85);
+    /* Safari and Chrome */
+    -o-transform: scale(0.85, 0.85);
+    /* Opera */
+    -moz-transform: scale(0.85, 0.85);
+    /* Firefox */
+}
+
+a {
+    color: #292b2c !important;
+    text-decoration: none !important;
+    /* no underline */
+}
+
+h1 {
+    font-weight: 900 !important;
+    font-size: 8em !important;
+    letter-spacing: 15px;
+    font-family: 'Roboto';
+}
+
+h3 {
+    font-weight: 900 !important;
+    font-size: 2em !important;
+    letter-spacing: 5px;
+    font-family: 'Roboto';
+}
+
+h5 {
+    font-weight: 900 !important;
+    font-family: 'Roboto';
+
+}
+
+.smallerfont {
+    font-size: smaller;
+}
+
+.font1 {
+    font-family: 'Roboto';
+}
+
+.hoverfont {
+    text-transform: uppercase;
+    font-family: 'Karla';
+    font-size: small;
+    letter-spacing: 6px;
+}
+
+.btn {
+    font-weight: 900 !important;
+    letter-spacing: 1px;
+    font-family: 'Roboto';
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+.h100 {
+    min-height: 100vh;
+}
+
+.h80 {
+    min-height: 80vh;
+}
+
+.h50 {
+    min-height: 50vh;
+}
+
+.h35 {
+    min-height: 35vh;
+}
+
+.h30 {
+    min-height: 30vh;
+}
+
+.h20 {
+    min-height: 20vh;
+}
+
+.h10 {
+    min-height: 10vh;
+}
+
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.bg1 {
+    background-image: url(images/default.png) !important;
+
+}
+
+.bg-color1 {
+    background-color: #1A7A3F !important;
+}
+
+.bg-color2 {
+    background-color: #FFF5DA !important;
+}
+
+.bg-color3 {
+    background-color: #B1843B !important;
+}
+
+.bg-color4 {
+    background-color: #ffffff !important;
+}
+
+.color1 {
+    color: #1A7A3F !important;
+}
+
+.color2 {
+    color: #FFF5DA !important;
+}
+
+.color3 {
+    color: #B1843B !important;
+}
+
+.color4 {
+    color: #ffffff !important;
+}
+
+.color5 {
+    color: #292b2c;
+}
+
+.carousel .carousel-indicators li {
+
+    background-color: black;
+}
+
+.carousel .carousel-indicators .active {
+
+    width: 5em;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.warp:hover .bg-cover {
+    transition: 1s ease;
+    filter: brightness(40%);
+    /* box-shadow: inset 10px 0px 100px #1A7A3F; */
+}
+
+.warp:hover .overlay {
+    opacity: 1;
+}
+
+
+a:hover .warp .col-md-6 .card-body .card-title,
+a:hover .card-body h5,
+.warp:hover .card-body .card-text h5,
+.warp:hover .card-body .card-text a .container-fluid .row .text-muted {
+    color: #1A7A3F !important;
+}
+
+.container .row .roomnav .container-fluid a:hover p {
+    color: #1A7A3F !important;
+    text-decoration: underline;
+}
+
+
+.navbar-light .navbar-nav .active {
+    font-weight: 900;
+    color: #1A7A3F !important;
+    font-family: 'Roboto';
+}
+
+.navbar-light .navbar-brand {
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-size: 1.5em;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #1A7A3F !important;
+}
+
+.preload {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1A7A3F !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.preload-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: smaller;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: smaller;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: smaller;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: smaller;
+}
+
+.container form .row textarea {
+    overflow: hidden;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    border: none;
+}
+
+.container form .row textarea:hover {
+    border-bottom: 1px solid #1A7A3F !important;
+}
+
+
+.container form .row textarea:focus {
+    border-bottom: 1px solid #1A7A3F !important;
+}
+
+.profile-comment {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) {
+    h1 {
+        font-weight: 900 !important;
+        font-size: 4em !important;
+        letter-spacing: 5px;
+    }
+
+    h3 {
+        font-weight: 900 !important;
+        font-size: 1.5em !important;
+        letter-spacing: 2px;
+    }
+}
+
+
+@media (min-width: 576px) {}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    h1 {
+        font-weight: 900 !important;
+        font-size: 5em !important;
+        letter-spacing: 15px;
+
+    }
+
+    h3 {
+        font-weight: 900 !important;
+        font-size: 1.5em !important;
+        letter-spacing: 5px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    h1 {
+        font-weight: 900 !important;
+        font-size: 12em !important;
+        letter-spacing: 15px;
+
+    }
+
+    h3 {
+        font-weight: 900 !important;
+        font-size: 2em !important;
+        letter-spacing: 5px;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1 {
+        font-weight: 900 !important;
+        font-size: 7em !important;
+        letter-spacing: 15px;
+
+    }
+}
