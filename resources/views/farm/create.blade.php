@@ -56,6 +56,7 @@
 
                 <form action="{{ route('farm.store') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="id">
                     <div class="form-group row">
                         <label for="nama_lahan" class="col-sm-2 col-form-label">Nama Lahan</label>
                         <div class="col-sm-10">
@@ -68,16 +69,39 @@
                             <input class="form-control" type="text" id="luas" name="luas">
                         </div>
                     </div>                    
+                    <div class="form-group row">
+                        <label for="lokasi" class="col-sm-2 col-form-label">Lokasi</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="lokasi" name="lokasi">
+                        </div>
+                    </div>                    
+                    <div class="form-group row">
+                        <label for="total_kebutuhan" class="col-sm-2 col-form-label">Total Kebutuhan</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" id="total_kebutuhan" name="total_kebutuhan">
+                        </div>
+                    </div>                    
+                    <div class="form-group row">
+                        <label for="periode_kontrak" class="col-sm-2 col-form-label">Periode Kontrak</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" id="periode_kontrak" name="periode_kontrak">
+                        </div>
+                    </div>                    
+                    <div class="form-group row">
+                        <label for="bagi_hasil" class="col-sm-2 col-form-label">Bagi Hasil</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" id="bagi_hasil" name="bagi_hasil">
+                        </div>
+                    </div>                    
+                    <div class="form-group row">
+                        <label for="dana_max" class="col-sm-2 col-form-label">Dana Max</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" id="dana_max" name="dana_max">
+                        </div>
+                    </div>                    
                     <textarea name="deskripsi" class="summernote"></textarea>
 
-                    <div class="form-group row mt-3">
-                        <label for="komoditas" class="col-sm-2 col-form-label">Komoditas</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text" id="komoditas" name="komoditas">
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary mt-2" type="submit">Create Post</button>
+                    <button class="btn btn-primary mt-2" type="submit">Buat Lahan</button>
                 </form>
 
             </div>

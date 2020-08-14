@@ -9,10 +9,13 @@ use Auth;
 use App\Farm;
 use App\FarmGallery;
 
+use App\Invest;
+
 class FarmController extends Controller
 {
     public function index()
     {
+        $farms = Farm::latest()->get();
         return view('farm.index', compact('farms'));
     }
 
@@ -23,7 +26,13 @@ class FarmController extends Controller
 
     public function store(Request $request)
     {
-        Farm::create($request->all());
+        dd($request->id);
+
+        auth()->user()->farms()->create($request->all());
+
+        // $data_invest = $request->all();
+
+        Invest::create($request->all());
 
         session()->flash('status', 'added new farm');
 
