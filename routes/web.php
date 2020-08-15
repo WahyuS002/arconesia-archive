@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', 'FrontendController@home')->name('home');
+Route::get('/room', 'FrontendController@room')->name('room');
 
 Auth::routes();
 
