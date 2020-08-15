@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class FrontendController extends Controller
 {
     public function home()
@@ -13,6 +15,13 @@ class FrontendController extends Controller
 
     public function room()
     {
-        return view('room.index');
+        $posts = Post::latest()->get();
+
+        return view('room.index', compact('posts'));
+    }
+
+    public function article()
+    {
+        return view('room.article');
     }
 }

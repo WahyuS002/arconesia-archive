@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'FrontendController@home')->name('home');
+
 Route::get('/room', 'FrontendController@room')->name('room');
+Route::get('/article/{post:id}', 'FrontendController@article')->name('article');
 
 Auth::routes();
 

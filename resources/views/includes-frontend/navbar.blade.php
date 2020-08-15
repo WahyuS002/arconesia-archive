@@ -15,7 +15,7 @@
                 <div class="col-xl-11 col-lg-12">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
-                            <a class="nav-item mr-4 ml-4 font1 nav-link active"
+                            <a class="nav-item mr-4 ml-4 font1 nav-link{{ request()->is('/') ? ' active' : '' }}"
                                 style="font-weight: 900; letter-spacing: 1px;" href="{{ route('home') }}"> <span
                                     class="sr-only">(current)</span>Home</a>
                             <a class="nav-item mr-4 ml-4 font1 nav-link"
@@ -24,7 +24,7 @@
                                 style="font-weight: 900; letter-spacing: 1px;" href="#">Mart</a>
                             <a class="nav-item mr-4 ml-4 font1 nav-link"
                                 style="font-weight: 900; letter-spacing: 1px;" href="invest.html">Invest</a>
-                            <a class="nav-item mr-4 ml-4 font1 nav-link"
+                            <a class="nav-item mr-4 ml-4 font1 nav-link{{ request()->is('room') ? ' active' : '' }}"
                                 style="font-weight: 900; letter-spacing: 1px;" href="{{ route('room') }}"> Room</a>
                             <a class="nav-item mr-4 ml-4 font1 nav-link"
                                 style="font-weight: 900; letter-spacing: 1px;" href="#">Contact</a>

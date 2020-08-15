@@ -56,7 +56,7 @@
                 <h4 class="mt-0 header-title">Examples</h4>
                 <p class="text-muted m-b-30">Super simple wysiwyg editor on bootstrap</p>
 
-                <form action="{{ route('post.store') }}" method="POST">
+                <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label for="title" class="col-sm-2 col-form-label">Title</label>
@@ -67,7 +67,7 @@
                     <div class="form-group row">
                         <label for="foto" class="col-sm-2 col-form-label">Foto</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="foto" name="foto">
+                            <input class="form-control" type="file" id="foto" name="foto">
                         </div>
                     </div>
                     <div class="form-group row">

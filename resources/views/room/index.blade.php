@@ -87,13 +87,14 @@
                     <div class="row">
 
                         <!--POSTING CARD START -->
+                        @foreach ($posts as $post)
                         <div class="col-lg-4">
                             <!-- TAGS POSTING CARD -->
                             <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
                             <!-- TAGS POSTING CARD END -->
 
                             <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
+                            <a href="{{ route('article', $post->id) }}">
                                 <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
                                     <!-- ARTICLE IMAGE -->
                                     <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
@@ -104,30 +105,25 @@
                                     <div class="card-body">
                                         <div class="card-text">
                                             <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
+                                            <h5 class="card-title">{{ $post->title }}</h5>
                                             <!-- ARTCILE TITLE END -->
                                             <hr>
 
                                             <!-- ARTICLE DATE -->
                                             <p class=" text-muted pr-1 text-right"
                                                 style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
+                                                {{ $post->created_at->diffForHumans() }}
                                             </p>
                                             <!-- ARTICLE DATE END -->
 
                                             <br>
                                             <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
+                                            <p class="card-text">{!! $post->body !!}</p>
                                             <br>
                                             <!-- ARTICLE CONTENT END -->
 
                                             <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
+                                            <a href="{{ route('article', $post->id) }}">
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <p class=" text-muted col-md-9 pr-1"
@@ -146,312 +142,8 @@
                                 </div>
                             </a>
                         </div>
-                        <!--POSTING CARD END-->
-                        <!--POSTING CARD START -->
-                        <div class="col-lg-4">
-                            <!-- TAGS POSTING CARD -->
-                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
-                            <!-- TAGS POSTING CARD END -->
-
-                            <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
-                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
-                                    <!-- ARTICLE IMAGE -->
-                                    <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
-                                    <!-- ARTICLE IMAGE END -->
-                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
-                                        READ MORE
-                                    </h5>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
-                                            <!-- ARTCILE TITLE END -->
-                                            <hr>
-
-                                            <!-- ARTICLE DATE -->
-                                            <p class=" text-muted pr-1 text-right"
-                                                style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
-                                            </p>
-                                            <!-- ARTICLE DATE END -->
-
-                                            <br>
-                                            <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
-                                            <br>
-                                            <!-- ARTICLE CONTENT END -->
-
-                                            <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <p class=" text-muted col-md-9 pr-1"
-                                                            style="font-size: smaller;">
-                                                            CONTINUE READING
-                                                        </p>
-                                                        <div class="col-md-3 p-0">
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!-- LINK TO ARTICLE 2 POSTING END -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!--POSTING CARD END-->
-                        <!--POSTING CARD START -->
-                        <div class="col-lg-4">
-                            <!-- TAGS POSTING CARD -->
-                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
-                            <!-- TAGS POSTING CARD END -->
-
-                            <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
-                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
-                                    <!-- ARTICLE IMAGE -->
-                                    <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
-                                    <!-- ARTICLE IMAGE END -->
-                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
-                                        READ MORE
-                                    </h5>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
-                                            <!-- ARTCILE TITLE END -->
-                                            <hr>
-
-                                            <!-- ARTICLE DATE -->
-                                            <p class=" text-muted pr-1 text-right"
-                                                style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
-                                            </p>
-                                            <!-- ARTICLE DATE END -->
-
-                                            <br>
-                                            <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
-                                            <br>
-                                            <!-- ARTICLE CONTENT END -->
-
-                                            <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <p class=" text-muted col-md-9 pr-1"
-                                                            style="font-size: smaller;">
-                                                            CONTINUE READING
-                                                        </p>
-                                                        <div class="col-md-3 p-0">
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!-- LINK TO ARTICLE 2 POSTING END -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!--POSTING CARD END-->
-                        <!--POSTING CARD START -->
-                        <div class="col-lg-4">
-                            <!-- TAGS POSTING CARD -->
-                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
-                            <!-- TAGS POSTING CARD END -->
-
-                            <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
-                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
-                                    <!-- ARTICLE IMAGE -->
-                                    <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
-                                    <!-- ARTICLE IMAGE END -->
-                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
-                                        READ MORE
-                                    </h5>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
-                                            <!-- ARTCILE TITLE END -->
-                                            <hr>
-
-                                            <!-- ARTICLE DATE -->
-                                            <p class=" text-muted pr-1 text-right"
-                                                style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
-                                            </p>
-                                            <!-- ARTICLE DATE END -->
-
-                                            <br>
-                                            <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
-                                            <br>
-                                            <!-- ARTICLE CONTENT END -->
-
-                                            <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <p class=" text-muted col-md-9 pr-1"
-                                                            style="font-size: smaller;">
-                                                            CONTINUE READING
-                                                        </p>
-                                                        <div class="col-md-3 p-0">
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!-- LINK TO ARTICLE 2 POSTING END -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!--POSTING CARD END-->
-                        <!--POSTING CARD START -->
-                        <div class="col-lg-4">
-                            <!-- TAGS POSTING CARD -->
-                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
-                            <!-- TAGS POSTING CARD END -->
-
-                            <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
-                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
-                                    <!-- ARTICLE IMAGE -->
-                                    <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
-                                    <!-- ARTICLE IMAGE END -->
-                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
-                                        READ MORE
-                                    </h5>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
-                                            <!-- ARTCILE TITLE END -->
-                                            <hr>
-
-                                            <!-- ARTICLE DATE -->
-                                            <p class=" text-muted pr-1 text-right"
-                                                style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
-                                            </p>
-                                            <!-- ARTICLE DATE END -->
-
-                                            <br>
-                                            <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
-                                            <br>
-                                            <!-- ARTICLE CONTENT END -->
-
-                                            <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <p class=" text-muted col-md-9 pr-1"
-                                                            style="font-size: smaller;">
-                                                            CONTINUE READING
-                                                        </p>
-                                                        <div class="col-md-3 p-0">
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!-- LINK TO ARTICLE 2 POSTING END -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!--POSTING CARD END-->
-                        <!--POSTING CARD START -->
-                        <div class="col-lg-4">
-                            <!-- TAGS POSTING CARD -->
-                            <h5 class="text-muted hoverfont"> NATURE | TECHNOLOGY </h5>
-                            <!-- TAGS POSTING CARD END -->
-
-                            <!-- LINK TO ARTICLE 1 POSTING -->
-                            <a href="article.html">
-                                <div class="card mb-5 mt-1 warp" style="overflow: hidden;">
-                                    <!-- ARTICLE IMAGE -->
-                                    <img class="card-img-top bg-cover" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="Card image cap">
-                                    <!-- ARTICLE IMAGE END -->
-                                    <h5 class="overlay mt-5 pt-5 color4 text-center hoverfont">
-                                        READ MORE
-                                    </h5>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            <!-- ARTCILE TITLE -->
-                                            <h5 class="card-title">Zero Gravity Cuisine: Reimagining the Experience
-                                                of
-                                                Space
-                                                Food</h5>
-                                            <!-- ARTCILE TITLE END -->
-                                            <hr>
-
-                                            <!-- ARTICLE DATE -->
-                                            <p class=" text-muted pr-1 text-right"
-                                                style="font-size: smaller; text-transform: uppercase;">
-                                                APRIL 15, 2019
-                                            </p>
-                                            <!-- ARTICLE DATE END -->
-
-                                            <br>
-                                            <!-- ARTICLE CONTENT -->
-                                            <p class="card-text">This article is based on research currently being
-                                                conducted
-                                                by author Maggie Coblentz at the Rhode Island School of Design.</p>
-                                            <br>
-                                            <!-- ARTICLE CONTENT END -->
-
-                                            <!-- LINK TO ARTICLE 2 POSTING -->
-                                            <a href="article.html">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <p class=" text-muted col-md-9 pr-1"
-                                                            style="font-size: smaller;">
-                                                            CONTINUE READING
-                                                        </p>
-                                                        <div class="col-md-3 p-0">
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!-- LINK TO ARTICLE 2 POSTING END -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!--POSTING CARD END-->
+                        @endforeach                        
+                        <!--POSTING CARD END-->                        
 
                     </div>
                 </div>
