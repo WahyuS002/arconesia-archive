@@ -19,14 +19,13 @@
                             <!-- TAGS END -->
 
                             <!-- TITLE -->
-                            <h3 class="card-title">Zero Gravity Cuisine: Reimagining the Experience of Space
-                                Food</h3>
+                            <h3 class="card-title">{{ $post->title }}</h3>
                             <!-- TITLE END -->
                             <hr>
                             <!-- ARTICLE DATE -->
                             <p class=" text-muted pr-1 text-right"
                                 style="font-size: smaller; text-transform: uppercase;">
-                                APRIL 15, 2019
+                                {{ $post->created_at->diffForHumans() }}
                             </p>
                             <!-- ARTICLE DATE END -->
 
@@ -38,70 +37,7 @@
                                 <!-- BODY -->
                                 <div>
                                     <br>
-                                    <p class="card-text">
-                                        This article is based on research currently being conducted by author Maggie
-                                        Coblentz at the Rhode Island School of Design. The viewpoints in this article
-                                        reflect those of Coblentz, and will be further explored in her thesis, currently
-                                        in development, which examines the ways in which innovative food design can
-                                        improve the health and happiness of astronauts on long-term missions.
-                                    </p>
-                                    <p class="card-text">
-                                        It’s 2034, and after nearly a year of travel, a crew of NASA astronauts have
-                                        entered low-Mars orbit. Here, they will perform research to learn more about
-                                        what it will take for humans to land – and stay – on Mars. With this
-                                        information, NASA will begin preparing for the final step in its decades-long
-                                        endeavor: successful descent, landing, and extended resource use on Mars. If all
-                                        goes according to plan, the astronauts will return to Earth in 2036.
-                                    </p>
-                                    <p class="card-text">
-                                        Exciting as this may sound, there are still a multitude of challenges to be
-                                        overcome before a mission to Mars is possible. Of course, there are the
-                                        technical feats required to enter the planet’s orbit – not to mention the
-                                        profound financial cost of such an endeavor. But there’s also another factor to
-                                        consider, one that is often overlooked by those with big dreams of widespread
-                                        space travel: astronaut happiness.
-                                    </p>
-                                    <br><br>
-                                    <h5 class="card-title">
-                                        Eating as Entertainment: Overcoming Boredom in Space
-                                    </h5>
-                                    <p>
-                                        Boredom and depression are obstacles often faced by astronauts, particularly
-                                        those on long missions – a detail that has not been ignored by those looking to
-                                        Mars. Researchers are already studying the psychological and social effects of
-                                        long space missions. The Hawai’i Space Exploration Analog and Simulation
-                                        (HI-SEAS) Habitat, for example, is an analog habitat designed to mimic the
-                                        conditions of a mission to Mars. Campaigns last 4-12 months and see crew members
-                                        living together in close quarters and performing all the tasks associated with
-                                        habitation on Mars.
-
-                                        The first HI-SEAS study, conducted in 2013 for four months, focused on a
-                                        specific aspect of astronaut wellbeing: eating. In addition to comparing the
-                                        psychological and physiological benefits of two food systems, the study looked
-                                        at the feasibility of using hydroponics on Mars. Based on his experiences,
-                                        HI-SEAS crew commander Angelo Vermeulen reported a need for spices and herbs, as
-                                        well as comfort foods and higher-protein options.
-                                    </p>
-                                    <br><br>
-                                    <h5 class="card-title">
-                                        The Challenges of Space Food
-                                    </h5>
-                                    <p>
-                                        Some barriers to designing satisfying space food are better known than others.
-                                        It might be obvious, for example, that a spacecraft must be equipped with enough
-                                        non-perishable food items to feed a crew for the duration of their mission (plus
-                                        emergency stores), or even that eating certain foods without the aid of gravity
-                                        is difficult. But what about the other less-known challenges?
-
-                                        For starters, reduced gravity affects the fluid distribution in an astronaut’s
-                                        body upon arrival in space, leading to a change in taste perception, a temporary
-                                        effect that could be reduced or altered by promoting interactions between
-                                        different sensory modalities to improve taste perception. Additionally, while
-                                        NASA’s current space food system offers some variability in menu items, the
-                                        freeze-dried and pre-packaged MREs delivered in plastic bags do little to
-                                        disrupt monotony or emulate the experience of preparing food and eating on
-                                        Earth.
-                                    </p>
+                                    {!! $post->body !!}
                                 </div>
                                 <!-- BODY END -->
                             </div>

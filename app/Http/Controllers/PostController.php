@@ -31,6 +31,8 @@ class PostController extends Controller
         $foto = $request->file('foto');
         $data['foto'] = $foto->storeAs("images/post", $nama_foto);
 
+        dd($data['foto']);
+
         $post = $data;
 
         $post->tags()->attach($request->tags);

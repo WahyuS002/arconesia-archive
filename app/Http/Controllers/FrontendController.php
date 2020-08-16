@@ -20,8 +20,8 @@ class FrontendController extends Controller
         return view('room.index', compact('posts'));
     }
 
-    public function article()
+    public function article(Post $post)
     {
-        return view('room.article');
+        return view('room.article', compact('post'));
     }
 }
