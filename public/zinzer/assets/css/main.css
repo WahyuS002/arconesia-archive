@@ -1,0 +1,7 @@
+div a .card:hover {
+    background-color: #d1d1d1;
+}
+
+div a .card {
+    color: #25478b;
+}

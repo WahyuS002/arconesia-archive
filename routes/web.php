@@ -20,6 +20,7 @@ Route::get('/', 'FrontendController@home')->name('home');
 
 Route::get('/room', 'FrontendController@room')->name('room');
 Route::get('/article/{post:id}', 'FrontendController@article')->name('article');
+Route::post('/comment', 'FrontendController@comment');
 
 Auth::routes();
 
@@ -51,7 +52,6 @@ Route::middleware('petani')->group(function () {
     Route::get('/lahan/create', 'FarmController@create')->name('farm.create');
     Route::post('/lahan/store', 'FarmController@store')->name('farm.store');
 });
-
 
 Route::get('/verifikasi', 'FarmerController@kyc')->name('kyc');
 

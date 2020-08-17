@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role', ['admin', 'petani', 'investor']);
             $table->enum('is_kyc', ['waiting', 'success', 'failed']);
+            $table->enum('kyc_level', ['1', '2', '3']);
             $table->rememberToken();
             $table->timestamps();
         });

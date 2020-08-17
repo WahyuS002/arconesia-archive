@@ -1,3 +1,8 @@
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-comments/css/jquery-comments.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-comments/css/font-awesome.min.css') }}"> --}}
+@endsection
+
 @extends('layouts.frontend')
 
 @section('content')
@@ -45,97 +50,16 @@
                         <!-- CONTENT END -->
 
                         <!-- Vetical Space -->
-                        <div class="container h20"></div>
-
+                        <div class="container h20"></div>                        
 
                         <!-- ADD COMMENT -->
                         <div class="container pb-5">
                             <h5 class="text-left pl-5 pr-5" style="font-size: smaller;"> LEAVE COMMENT </h5>
                             <hr>
                             <!-- COMMENT FORM -->
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-1">
-                                        <div class="profile-comment"
-                                            style="background-image: url({{ url('frontend/images/mart7.jpeg') }});">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <!-- COMMENT TEXTAREA -->
-                                        <textarea type="text-area" class="form-control smallerfont p-2"
-                                            placeholder="ADD COMMENT" rows="1"></textarea>
-                                        <!-- COMMENT TEXTAREA END -->
-                                    </div>
-                                    <div class="col-lg-2 text-right">
-                                        <button type="submit"
-                                            class=" text-center d-inline hbtn hb-fill-right bg-color1 pl-4 pr-4 smallerfont">COMMENT</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- COMMENT FORM END -->
+                            <div id="comments-container"></div>                            
                         </div>
                         <!-- ADD COMMENT END -->
-
-                        <!-- COMMENT -->
-                        <div class="container">
-                            <h5 class="text-left pl-5 pr-5" style="font-size: smaller;"> 2 COMMENT </h5>
-                            <hr>
-                            <div class="mb-5">
-                                <!-- PEOPLE COMMENT -->
-                                <div class="row mb-3 pl-5">
-                                    <div class="col-lg-1">
-                                        <div class="profile-comment"
-                                            style="background-image: url({{ url('frontend/images/mart5.jpeg') }});">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-11">
-                                        <p class="p-2 d-inline-block" style="font-weight: 900;">
-                                            Joeby Ragpa
-                                        </p>
-                                        <p class="text-muted smallerfont p-2 d-inline-block"
-                                            style="text-transform: uppercase;">
-                                            August 6, 2016
-                                        </p>
-                                        <p class="smallerfont p-2">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex illum ducimus
-                                            voluptatibus nulla inventore, quia ratione ea adipisci asperiores, non
-                                            placeat dicta maxime accusantium voluptatum quis impedit cumque tenetur
-                                            laudantium?
-                                            <hr>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <!-- PEOPLE COMMENT END -->
-                                <!-- PEOPLE COMMENT -->
-                                <div class="row mb-3 pl-5">
-                                    <div class="col-lg-1">
-                                        <div class="profile-comment"
-                                            style="background-image: url({{ url('frontend/images/mart5.jpeg') }});">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-11">
-                                        <p class="p-2 d-inline-block" style="font-weight: 900;">
-                                            Joeby Ragpa
-                                        </p>
-                                        <p class="text-muted smallerfont p-2 d-inline-block"
-                                            style="text-transform: uppercase;">
-                                            August 6, 2016
-                                        </p>
-                                        <p class="smallerfont p-2">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex illum ducimus
-                                            voluptatibus nulla inventore, quia ratione ea adipisci asperiores, non
-                                            placeat dicta maxime accusantium voluptatum quis impedit cumque tenetur
-                                            laudantium?
-                                            <hr>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- PEOPLE COMMENT END -->
-
-                            </div>
-                        </div>
-                        <!-- COMMENT END -->
 
                         <!-- Vetical Space -->
                         <div class="container h20"></div>
@@ -318,4 +242,49 @@
 
     <!-- Vetical Space -->
     <div class="container h20"></div>
+@endsection
+
+@section('js')
+    <script type="text/javascript" src="{{ asset('plugins/jquery-comments/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/jquery-comments/js/jquery-comments.js') }}"></script>
+
+    <script>
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('#comments-container').comments({
+            profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
+            getComments: function(success, error) {                
+                var commentsArray = [{
+                id: 1,
+                created: '2015-10-01',
+                content: 'Lorem ipsum dolort sit amet',
+                fullname: 'Simon Powell',
+                upvote_count: 2,
+                user_has_upvoted: false
+                }];
+                success(commentsArray);
+            },
+            postComment: function(commentJSON, success, error){
+                $.ajax({                  
+                    url: '/comment',
+                    type: 'POST',
+                    data: {
+                        user_id: commentJSON.id,
+                        post_id: commentJSON.id,
+                        komentar: commentJSON.content,
+                        tanggal: commentJSON.created,
+                    },
+                    success: success(commentJSON),
+                    success: function(response){
+                        alert('response')
+                    }
+                })
+            }
+        });
+    </script>
 @endsection

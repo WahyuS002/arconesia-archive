@@ -27,11 +27,8 @@ class PostController extends Controller
     {
         $data = auth()->user()->posts()->create($request->all());
 
-        $nama_foto = $request->file('foto')->getClientOriginalName();
-        $foto = $request->file('foto');
-        $data['foto'] = $foto->storeAs("images/post", $nama_foto);
-
-        dd($data['foto']);
+        $nama_foto = $request->foto->getClientOriginalName();
+        $data['foto'] = $request->foto->storeAs("images/post", $nama_foto);
 
         $post = $data;
 
