@@ -29,8 +29,11 @@
                             <a class="nav-item mr-4 ml-4 font1 nav-link"
                                 style="font-weight: 900; letter-spacing: 1px;" href="#">Contact</a>
 
-                            <button type="button"
-                                class=" nav-item mr-4 ml-4 hbtn hb-fill-on pl-5 pr-5 bg-color1">Join</button>
+                            <a type="button" href="{{ route('login') }}"
+                                class="nav-item mr-4 ml-4 hbtn hb-fill-on pl-5 pr-5 bg-color1">
+                                {{-- <a href="{{ route('login') }}">Login</a>          --}}
+                                Login
+                            </a>
                         </div>
                     </div>
                 </div>

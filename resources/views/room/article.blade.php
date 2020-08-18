@@ -239,7 +239,6 @@
     </div>
     <!-- REKOMENDASI END -->
 
-
     <!-- Vetical Space -->
     <div class="container h20"></div>
 @endsection
@@ -258,7 +257,12 @@
 
         $('#comments-container').comments({
             profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
-            getComments: function(success, error) {                
+
+            success:function(){
+                console.log('abc');
+            },
+
+            getComments: function(success, error) {             
                 var commentsArray = [{
                 id: 1,
                 created: '2015-10-01',
@@ -266,7 +270,15 @@
                 fullname: 'Simon Powell',
                 upvote_count: 2,
                 user_has_upvoted: false
-                }];
+                },{
+                id: 2,
+                created: '2015-10-01',
+                content: 'ee ipsum dolort sit amet',
+                fullname: 'Simon Powell',
+                upvote_count: 2,
+                user_has_upvoted: false
+                }
+                ];
                 success(commentsArray);
             },
             postComment: function(commentJSON, success, error){
@@ -274,10 +286,10 @@
                     url: '/comment',
                     type: 'POST',
                     data: {
-                        user_id: commentJSON.id,
-                        post_id: commentJSON.id,
+                        user_id: '1',
+                        post_id: '1',
                         komentar: commentJSON.content,
-                        tanggal: commentJSON.created,
+                        tanggal: '',
                     },
                     success: success(commentJSON),
                     success: function(response){
