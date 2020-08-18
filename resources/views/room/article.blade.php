@@ -1,8 +1,3 @@
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-comments/css/jquery-comments.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-comments/css/font-awesome.min.css') }}"> --}}
-@endsection
-
 @extends('layouts.frontend')
 
 @section('content')
@@ -241,62 +236,4 @@
 
     <!-- Vetical Space -->
     <div class="container h20"></div>
-@endsection
-
-@section('js')
-    <script type="text/javascript" src="{{ asset('plugins/jquery-comments/js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/jquery-comments/js/jquery-comments.js') }}"></script>
-
-    <script>
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $('#comments-container').comments({
-            profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
-
-            success:function(){
-                console.log('abc');
-            },
-
-            getComments: function(success, error) {             
-                var commentsArray = [{
-                id: 1,
-                created: '2015-10-01',
-                content: 'Lorem ipsum dolort sit amet',
-                fullname: 'Simon Powell',
-                upvote_count: 2,
-                user_has_upvoted: false
-                },{
-                id: 2,
-                created: '2015-10-01',
-                content: 'ee ipsum dolort sit amet',
-                fullname: 'Simon Powell',
-                upvote_count: 2,
-                user_has_upvoted: false
-                }
-                ];
-                success(commentsArray);
-            },
-            postComment: function(commentJSON, success, error){
-                $.ajax({                  
-                    url: '/comment',
-                    type: 'POST',
-                    data: {
-                        user_id: '1',
-                        post_id: '1',
-                        komentar: commentJSON.content,
-                        tanggal: '',
-                    },
-                    success: success(commentJSON),
-                    success: function(response){
-                        alert('response')
-                    }
-                })
-            }
-        });
-    </script>
 @endsection
