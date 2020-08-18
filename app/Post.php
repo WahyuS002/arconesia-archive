@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Laravelista\Comments\Commentable;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
-    use Commentable;
+    use Commentable, InteractsWithMedia;
 
-    protected $fillable = ['title', 'body', 'foto', 'tanggal'];
+    protected $fillable = ['title', 'body', 'tanggal'];
 
     public function tags()
     {

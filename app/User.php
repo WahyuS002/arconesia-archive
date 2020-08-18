@@ -43,6 +43,11 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function post()
+    {
+        return $this->hasOne(Post::class);
+    }
+
     public function farmer()
     {
         return $this->hasOne(Farmer::class);

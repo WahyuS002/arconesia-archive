@@ -25,14 +25,20 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $data = auth()->user()->posts()->create($request->all());
+        $user = auth()->user();
 
-        $nama_foto = $request->foto->getClientOriginalName();
-        $data['foto'] = $request->foto->storeAs("images/post", $nama_foto);
+        $post  = Post::find(1);
 
-        $post = $data;
+        // Add image
+        $post->addMedia($request->foto)->toMediaCollection();
 
-        $post->tags()->attach($request->tags);
+        $data = $user->posts()->create($request->all());
+
+        // $nama_foto = $request->foto->getClientOriginalName();
+        // $data['foto'] = $request->foto->storeAs("images/post", $nama_foto);
+
+
+        $data->tags()->attach($request->tags);
 
         return redirect()->back()->with('status', 'Berhasil Menambahkan Postingan');
     }
