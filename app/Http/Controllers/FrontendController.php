@@ -27,8 +27,7 @@ class FrontendController extends Controller
 
     public function article(Post $post)
     {
-        $comments = Comment::all();
-        return view('room.article', compact('post', 'comments'));
+        return view('room.article', compact('post'));
     }
 
     public function comment(Request $request)

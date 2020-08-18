@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravelista\Comments\Commentable;
 
 class Post extends Model
 {
+    use Commentable;
+
     protected $fillable = ['title', 'body', 'foto', 'tanggal'];
 
     public function tags()
@@ -16,10 +19,5 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
-    }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
     }
 }

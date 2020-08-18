@@ -52,7 +52,9 @@
                             <h5 class="text-left pl-5 pr-5" style="font-size: smaller;"> LEAVE COMMENT </h5>
                             <hr>
                             <!-- COMMENT FORM -->
-                            <div id="comments-container"></div>                            
+                            <div>
+                                @comments(['model' => $post])
+                            </div>                            
                         </div>
                         <!-- ADD COMMENT END -->
 
